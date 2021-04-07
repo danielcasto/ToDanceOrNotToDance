@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include "Album.h"
 
 using std::vector;
 

@@ -1,4 +1,6 @@
 #include <iostream>
+#include "Album.h"
+#include "main_functions.h"
 
 using namespace std;
 
@@ -36,7 +38,5 @@ int main() {
     cout << endl;
     cout << "How many album results would you like to see? ( -1 for all results) " << endl;
 
-
+    return 0;
 }
-// some random comment
-//test

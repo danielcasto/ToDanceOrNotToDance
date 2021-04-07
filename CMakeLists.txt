@@ -3,4 +3,4 @@ project(ToDanceOrNotToDance)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(ToDanceOrNotToDance main.cpp)
+add_executable(ToDanceOrNotToDance main.cpp Album.cpp Song.cpp main_functions.cpp)

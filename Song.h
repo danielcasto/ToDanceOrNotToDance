@@ -6,6 +6,8 @@
 
 #include <string>
 
+using std::string;
+
 class Song {
     string name;
     bool isExplicit;
