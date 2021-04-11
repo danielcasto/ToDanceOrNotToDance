@@ -4,7 +4,7 @@
 
 #include "Song.h"
 
-Song::Song(string _name, bool _isExplicit, float _danceability, int _duration, int _trackNumber, string _songID) {
+Song::Song(string _songID, string _name, int _trackNumber, bool _isExplicit, float _danceability, int _duration) {
     name = _name;
     isExplicit = _isExplicit;
     danceability = _danceability;

@@ -18,7 +18,10 @@ class Album {
     float avgDanceability;
     bool containsExplicitSong;
     string artistID;
+    int totalRuntime;
 
 public:
-    Album(string _name, string _artist, vector<Song> _songs, float _avgDanceability, bool _containsExplicitSong, string _artistID);
+    Album(string _name, string _artist, vector<Song> _songs, float _avgDanceability, bool _containsExplicitSong, string _artistID, int _totalRuntime);
+    bool operator>(const Album& rhs) const;
+    bool operator<(const Album& rhs) const;
 };

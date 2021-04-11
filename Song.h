@@ -20,5 +20,5 @@ class Song {
     string songID;
 
 public:
-    Song(string _name, bool _isExplicit, float _danceability, int _duration, int _trackNumber, string _songID);
+    Song(string _songID, string _name, int _trackNumber, bool _isExplicit, float _danceability, int _duration);
 };
