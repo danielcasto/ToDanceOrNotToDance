@@ -4,7 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/PS5 Swap/Documents/GitHub/ToDanceOrNotToDance/Album.cpp" "C:/Users/PS5 Swap/Documents/GitHub/ToDanceOrNotToDance/cmake-build-debug/CMakeFiles/ToDanceOrNotToDance.dir/Album.cpp.obj"
+  "C:/Users/PS5 Swap/Documents/GitHub/ToDanceOrNotToDance/Song.cpp" "C:/Users/PS5 Swap/Documents/GitHub/ToDanceOrNotToDance/cmake-build-debug/CMakeFiles/ToDanceOrNotToDance.dir/Song.cpp.obj"
   "C:/Users/PS5 Swap/Documents/GitHub/ToDanceOrNotToDance/main.cpp" "C:/Users/PS5 Swap/Documents/GitHub/ToDanceOrNotToDance/cmake-build-debug/CMakeFiles/ToDanceOrNotToDance.dir/main.cpp.obj"
+  "C:/Users/PS5 Swap/Documents/GitHub/ToDanceOrNotToDance/main_functions.cpp" "C:/Users/PS5 Swap/Documents/GitHub/ToDanceOrNotToDance/cmake-build-debug/CMakeFiles/ToDanceOrNotToDance.dir/main_functions.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

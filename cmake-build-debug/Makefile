@@ -142,6 +142,60 @@ ToDanceOrNotToDance/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToDanceOrNotToDance.dir\build.make CMakeFiles/ToDanceOrNotToDance.dir/build
 .PHONY : ToDanceOrNotToDance/fast
 
+Album.obj: Album.cpp.obj
+
+.PHONY : Album.obj
+
+# target to build an object file
+Album.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToDanceOrNotToDance.dir\build.make CMakeFiles/ToDanceOrNotToDance.dir/Album.cpp.obj
+.PHONY : Album.cpp.obj
+
+Album.i: Album.cpp.i
+
+.PHONY : Album.i
+
+# target to preprocess a source file
+Album.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToDanceOrNotToDance.dir\build.make CMakeFiles/ToDanceOrNotToDance.dir/Album.cpp.i
+.PHONY : Album.cpp.i
+
+Album.s: Album.cpp.s
+
+.PHONY : Album.s
+
+# target to generate assembly for a file
+Album.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToDanceOrNotToDance.dir\build.make CMakeFiles/ToDanceOrNotToDance.dir/Album.cpp.s
+.PHONY : Album.cpp.s
+
+Song.obj: Song.cpp.obj
+
+.PHONY : Song.obj
+
+# target to build an object file
+Song.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToDanceOrNotToDance.dir\build.make CMakeFiles/ToDanceOrNotToDance.dir/Song.cpp.obj
+.PHONY : Song.cpp.obj
+
+Song.i: Song.cpp.i
+
+.PHONY : Song.i
+
+# target to preprocess a source file
+Song.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToDanceOrNotToDance.dir\build.make CMakeFiles/ToDanceOrNotToDance.dir/Song.cpp.i
+.PHONY : Song.cpp.i
+
+Song.s: Song.cpp.s
+
+.PHONY : Song.s
+
+# target to generate assembly for a file
+Song.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToDanceOrNotToDance.dir\build.make CMakeFiles/ToDanceOrNotToDance.dir/Song.cpp.s
+.PHONY : Song.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -169,6 +223,33 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToDanceOrNotToDance.dir\build.make CMakeFiles/ToDanceOrNotToDance.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+main_functions.obj: main_functions.cpp.obj
+
+.PHONY : main_functions.obj
+
+# target to build an object file
+main_functions.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToDanceOrNotToDance.dir\build.make CMakeFiles/ToDanceOrNotToDance.dir/main_functions.cpp.obj
+.PHONY : main_functions.cpp.obj
+
+main_functions.i: main_functions.cpp.i
+
+.PHONY : main_functions.i
+
+# target to preprocess a source file
+main_functions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToDanceOrNotToDance.dir\build.make CMakeFiles/ToDanceOrNotToDance.dir/main_functions.cpp.i
+.PHONY : main_functions.cpp.i
+
+main_functions.s: main_functions.cpp.s
+
+.PHONY : main_functions.s
+
+# target to generate assembly for a file
+main_functions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToDanceOrNotToDance.dir\build.make CMakeFiles/ToDanceOrNotToDance.dir/main_functions.cpp.s
+.PHONY : main_functions.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -178,9 +259,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... ToDanceOrNotToDance
+	@echo ... Album.obj
+	@echo ... Album.i
+	@echo ... Album.s
+	@echo ... Song.obj
+	@echo ... Song.i
+	@echo ... Song.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... main_functions.obj
+	@echo ... main_functions.i
+	@echo ... main_functions.s
 .PHONY : help
 
 

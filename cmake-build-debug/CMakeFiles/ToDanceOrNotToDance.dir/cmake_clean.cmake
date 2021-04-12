@@ -1,5 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ToDanceOrNotToDance.dir/Album.cpp.obj"
+  "CMakeFiles/ToDanceOrNotToDance.dir/Song.cpp.obj"
   "CMakeFiles/ToDanceOrNotToDance.dir/main.cpp.obj"
+  "CMakeFiles/ToDanceOrNotToDance.dir/main_functions.cpp.obj"
   "ToDanceOrNotToDance.exe"
   "ToDanceOrNotToDance.exe.manifest"
   "ToDanceOrNotToDance.pdb"

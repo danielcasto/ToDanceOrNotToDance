@@ -89,19 +89,64 @@ CMakeFiles/ToDanceOrNotToDance.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ToDanceOrNotToDance.dir/main.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\PS5 Swap\Documents\GitHub\ToDanceOrNotToDance\main.cpp" -o CMakeFiles\ToDanceOrNotToDance.dir\main.cpp.s
 
+CMakeFiles/ToDanceOrNotToDance.dir/Album.cpp.obj: CMakeFiles/ToDanceOrNotToDance.dir/flags.make
+CMakeFiles/ToDanceOrNotToDance.dir/Album.cpp.obj: ../Album.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\PS5 Swap\Documents\GitHub\ToDanceOrNotToDance\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ToDanceOrNotToDance.dir/Album.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\ToDanceOrNotToDance.dir\Album.cpp.obj -c "C:\Users\PS5 Swap\Documents\GitHub\ToDanceOrNotToDance\Album.cpp"
+
+CMakeFiles/ToDanceOrNotToDance.dir/Album.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ToDanceOrNotToDance.dir/Album.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\PS5 Swap\Documents\GitHub\ToDanceOrNotToDance\Album.cpp" > CMakeFiles\ToDanceOrNotToDance.dir\Album.cpp.i
+
+CMakeFiles/ToDanceOrNotToDance.dir/Album.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ToDanceOrNotToDance.dir/Album.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\PS5 Swap\Documents\GitHub\ToDanceOrNotToDance\Album.cpp" -o CMakeFiles\ToDanceOrNotToDance.dir\Album.cpp.s
+
+CMakeFiles/ToDanceOrNotToDance.dir/Song.cpp.obj: CMakeFiles/ToDanceOrNotToDance.dir/flags.make
+CMakeFiles/ToDanceOrNotToDance.dir/Song.cpp.obj: ../Song.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\PS5 Swap\Documents\GitHub\ToDanceOrNotToDance\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ToDanceOrNotToDance.dir/Song.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\ToDanceOrNotToDance.dir\Song.cpp.obj -c "C:\Users\PS5 Swap\Documents\GitHub\ToDanceOrNotToDance\Song.cpp"
+
+CMakeFiles/ToDanceOrNotToDance.dir/Song.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ToDanceOrNotToDance.dir/Song.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\PS5 Swap\Documents\GitHub\ToDanceOrNotToDance\Song.cpp" > CMakeFiles\ToDanceOrNotToDance.dir\Song.cpp.i
+
+CMakeFiles/ToDanceOrNotToDance.dir/Song.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ToDanceOrNotToDance.dir/Song.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\PS5 Swap\Documents\GitHub\ToDanceOrNotToDance\Song.cpp" -o CMakeFiles\ToDanceOrNotToDance.dir\Song.cpp.s
+
+CMakeFiles/ToDanceOrNotToDance.dir/main_functions.cpp.obj: CMakeFiles/ToDanceOrNotToDance.dir/flags.make
+CMakeFiles/ToDanceOrNotToDance.dir/main_functions.cpp.obj: ../main_functions.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\PS5 Swap\Documents\GitHub\ToDanceOrNotToDance\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ToDanceOrNotToDance.dir/main_functions.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\ToDanceOrNotToDance.dir\main_functions.cpp.obj -c "C:\Users\PS5 Swap\Documents\GitHub\ToDanceOrNotToDance\main_functions.cpp"
+
+CMakeFiles/ToDanceOrNotToDance.dir/main_functions.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ToDanceOrNotToDance.dir/main_functions.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\PS5 Swap\Documents\GitHub\ToDanceOrNotToDance\main_functions.cpp" > CMakeFiles\ToDanceOrNotToDance.dir\main_functions.cpp.i
+
+CMakeFiles/ToDanceOrNotToDance.dir/main_functions.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ToDanceOrNotToDance.dir/main_functions.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\PS5 Swap\Documents\GitHub\ToDanceOrNotToDance\main_functions.cpp" -o CMakeFiles\ToDanceOrNotToDance.dir\main_functions.cpp.s
+
 # Object files for target ToDanceOrNotToDance
 ToDanceOrNotToDance_OBJECTS = \
-"CMakeFiles/ToDanceOrNotToDance.dir/main.cpp.obj"
+"CMakeFiles/ToDanceOrNotToDance.dir/main.cpp.obj" \
+"CMakeFiles/ToDanceOrNotToDance.dir/Album.cpp.obj" \
+"CMakeFiles/ToDanceOrNotToDance.dir/Song.cpp.obj" \
+"CMakeFiles/ToDanceOrNotToDance.dir/main_functions.cpp.obj"
 
 # External object files for target ToDanceOrNotToDance
 ToDanceOrNotToDance_EXTERNAL_OBJECTS =
 
 ToDanceOrNotToDance.exe: CMakeFiles/ToDanceOrNotToDance.dir/main.cpp.obj
+ToDanceOrNotToDance.exe: CMakeFiles/ToDanceOrNotToDance.dir/Album.cpp.obj
+ToDanceOrNotToDance.exe: CMakeFiles/ToDanceOrNotToDance.dir/Song.cpp.obj
+ToDanceOrNotToDance.exe: CMakeFiles/ToDanceOrNotToDance.dir/main_functions.cpp.obj
 ToDanceOrNotToDance.exe: CMakeFiles/ToDanceOrNotToDance.dir/build.make
 ToDanceOrNotToDance.exe: CMakeFiles/ToDanceOrNotToDance.dir/linklibs.rsp
 ToDanceOrNotToDance.exe: CMakeFiles/ToDanceOrNotToDance.dir/objects1.rsp
 ToDanceOrNotToDance.exe: CMakeFiles/ToDanceOrNotToDance.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\PS5 Swap\Documents\GitHub\ToDanceOrNotToDance\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ToDanceOrNotToDance.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\PS5 Swap\Documents\GitHub\ToDanceOrNotToDance\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ToDanceOrNotToDance.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\ToDanceOrNotToDance.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

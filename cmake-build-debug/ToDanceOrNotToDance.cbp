@@ -80,7 +80,25 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/PS5 Swap/Documents/GitHub/ToDanceOrNotToDance/Album.cpp">
+			<Option target="ToDanceOrNotToDance"/>
+		</Unit>
+		<Unit filename="C:/Users/PS5 Swap/Documents/GitHub/ToDanceOrNotToDance/Album.h">
+			<Option target="ToDanceOrNotToDance"/>
+		</Unit>
+		<Unit filename="C:/Users/PS5 Swap/Documents/GitHub/ToDanceOrNotToDance/Song.cpp">
+			<Option target="ToDanceOrNotToDance"/>
+		</Unit>
+		<Unit filename="C:/Users/PS5 Swap/Documents/GitHub/ToDanceOrNotToDance/Song.h">
+			<Option target="ToDanceOrNotToDance"/>
+		</Unit>
 		<Unit filename="C:/Users/PS5 Swap/Documents/GitHub/ToDanceOrNotToDance/main.cpp">
+			<Option target="ToDanceOrNotToDance"/>
+		</Unit>
+		<Unit filename="C:/Users/PS5 Swap/Documents/GitHub/ToDanceOrNotToDance/main_functions.cpp">
+			<Option target="ToDanceOrNotToDance"/>
+		</Unit>
+		<Unit filename="C:/Users/PS5 Swap/Documents/GitHub/ToDanceOrNotToDance/main_functions.h">
 			<Option target="ToDanceOrNotToDance"/>
 		</Unit>
 		<Unit filename="C:/Users/PS5 Swap/Documents/GitHub/ToDanceOrNotToDance/CMakeLists.txt">
