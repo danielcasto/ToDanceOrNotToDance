@@ -1,5 +1,6 @@
 #include "main_functions.h"
 #include <iostream>
+#include <iomanip>
 #include <fstream>
 #include <string>
 #include <sstream>
@@ -45,40 +46,223 @@ void loadAlbums(vector<Album> &albums) {
 
             string dummyString;
 
-            std::getline(lineStream, songID, ',');
+            if(lineStream.peek() == '\"') {
+                lineStream >> std::quoted(songID);
+                while(lineStream.peek() != ',') {
+                    lineStream >> std::quoted(dummyString);
+                    songID += dummyString;
+                }
+                std::getline(lineStream, dummyString, ',');
+            } else
+                std::getline(lineStream, songID, ',');
 
-            // Start of problem area
-            std::getline(lineStream, songName, ',');
-            std::getline(lineStream, albumNameTemp, ',');
+            if(lineStream.peek() == '\"') {
+                lineStream >> std::quoted(songName);
+                while(lineStream.peek() != ',') {
+                    lineStream >> std::quoted(dummyString);
+                    songName += dummyString;
+                }
+                std::getline(lineStream, dummyString, ',');
+            } else
+                std::getline(lineStream, songName, ',');
 
-            std::getline(lineStream, dummyString, ',');
+            if(lineStream.peek() == '\"') {
+                lineStream >> std::quoted(albumNameTemp);
+                while(lineStream.peek() != ',') {
+                    lineStream >> std::quoted(dummyString);
+                    albumNameTemp += dummyString;
+                }
+                std::getline(lineStream, dummyString, ',');
+            } else
+                std::getline(lineStream, albumNameTemp, ',');
 
-            std::getline(lineStream, artistTemp, ',');
+            if(lineStream.peek() == '\"') {
+                lineStream >> std::quoted(dummyString);
+                while(lineStream.peek() != ',') {
+                    lineStream >> std::quoted(dummyString);
+                    dummyString += dummyString;
+                }
+                std::getline(lineStream, dummyString, ',');
+            } else
+                std::getline(lineStream, dummyString, ',');
 
-            std::getline(lineStream, artistIDTemp, ',');
-            //end of problem area
+            if(lineStream.peek() == '\"') {
+                lineStream >> std::quoted(artistTemp);
+                while(lineStream.peek() != ',') {
+                    lineStream >> std::quoted(dummyString);
+                    artistTemp += dummyString;
+                }
+                std::getline(lineStream, dummyString, ',');
+            } else
+                std::getline(lineStream, artistTemp, ',');
 
-            std::getline(lineStream, trackNumString, ',');
-            std::getline(lineStream, dummyString, ',');
-            std::getline(lineStream, isExplicitString, ',');
+            if(lineStream.peek() == '\"') {
+                lineStream >> std::quoted(artistIDTemp);
+                while(lineStream.peek() != ',') {
+                    lineStream >> std::quoted(dummyString);
+                    artistIDTemp += dummyString;
+                }
+                std::getline(lineStream, dummyString, ',');
+            } else
+                std::getline(lineStream, artistIDTemp, ',');
+
+            if(lineStream.peek() == '\"') {
+                lineStream >> std::quoted(trackNumString);
+                while(lineStream.peek() != ',') {
+                    lineStream >> std::quoted(dummyString);
+                    trackNumString += dummyString;
+                }
+                std::getline(lineStream, dummyString, ',');
+            } else
+                std::getline(lineStream, trackNumString, ',');
+
+            if(lineStream.peek() == '\"') {
+                lineStream >> std::quoted(dummyString);
+                while(lineStream.peek() != ',') {
+                    lineStream >> std::quoted(dummyString);
+                    dummyString += dummyString;
+                }
+                std::getline(lineStream, dummyString, ',');
+            } else
+                std::getline(lineStream, dummyString, ',');
+
+            if(lineStream.peek() == '\"') {
+                lineStream >> std::quoted(isExplicitString);
+                while(lineStream.peek() != ',') {
+                    lineStream >> std::quoted(dummyString);
+                    isExplicitString += dummyString;
+                }
+                std::getline(lineStream, dummyString, ',');
+            } else
+                std::getline(lineStream, isExplicitString, ',');
+
 
             if(isExplicitString == "TRUE")
                 isExplicit = true;
 
-            std::getline(lineStream, danceabilityString, ',');
+            if(lineStream.peek() == '\"') {
+                lineStream >> std::quoted(danceabilityString);
+                while(lineStream.peek() != ',') {
+                    lineStream >> std::quoted(dummyString);
+                    danceabilityString += dummyString;
+                }
+                std::getline(lineStream, dummyString, ',');
+            } else
+                std::getline(lineStream, danceabilityString, ',');
 
-            std::getline(lineStream, dummyString, ',');
-            std::getline(lineStream, dummyString, ',');
-            std::getline(lineStream, dummyString, ',');
-            std::getline(lineStream, dummyString, ',');
-            std::getline(lineStream, dummyString, ',');
-            std::getline(lineStream, dummyString, ',');
-            std::getline(lineStream, dummyString, ',');
-            std::getline(lineStream, dummyString, ',');
-            std::getline(lineStream, dummyString, ',');
-            std::getline(lineStream, dummyString, ',');
 
-            std::getline(lineStream, durationString, ',');
+            //dummy strings begin:
+            if(lineStream.peek() == '\"') {
+                lineStream >> std::quoted(dummyString);
+                while(lineStream.peek() != ',') {
+                    lineStream >> std::quoted(dummyString);
+                    dummyString += dummyString;
+                }
+                std::getline(lineStream, dummyString, ',');
+            } else
+                std::getline(lineStream, dummyString, ',');
+
+            if(lineStream.peek() == '\"') {
+                lineStream >> std::quoted(dummyString);
+                while(lineStream.peek() != ',') {
+                    lineStream >> std::quoted(dummyString);
+                    dummyString += dummyString;
+                }
+                std::getline(lineStream, dummyString, ',');
+            } else
+                std::getline(lineStream, dummyString, ',');
+
+            if(lineStream.peek() == '\"') {
+                lineStream >> std::quoted(dummyString);
+                while(lineStream.peek() != ',') {
+                    lineStream >> std::quoted(dummyString);
+                    dummyString += dummyString;
+                }
+                std::getline(lineStream, dummyString, ',');
+            } else
+                std::getline(lineStream, dummyString, ',');
+
+            if(lineStream.peek() == '\"') {
+                lineStream >> std::quoted(dummyString);
+                while(lineStream.peek() != ',') {
+                    lineStream >> std::quoted(dummyString);
+                    dummyString += dummyString;
+                }
+                std::getline(lineStream, dummyString, ',');
+            } else
+                std::getline(lineStream, dummyString, ',');
+
+            if(lineStream.peek() == '\"') {
+                lineStream >> std::quoted(dummyString);
+                while(lineStream.peek() != ',') {
+                    lineStream >> std::quoted(dummyString);
+                    dummyString += dummyString;
+                }
+                std::getline(lineStream, dummyString, ',');
+            } else
+                std::getline(lineStream, dummyString, ',');
+
+            if(lineStream.peek() == '\"') {
+                lineStream >> std::quoted(dummyString);
+                while(lineStream.peek() != ',') {
+                    lineStream >> std::quoted(dummyString);
+                    dummyString += dummyString;
+                }
+                std::getline(lineStream, dummyString, ',');
+            } else
+                std::getline(lineStream, dummyString, ',');
+
+            if(lineStream.peek() == '\"') {
+                lineStream >> std::quoted(dummyString);
+                while(lineStream.peek() != ',') {
+                    lineStream >> std::quoted(dummyString);
+                    dummyString += dummyString;
+                }
+                std::getline(lineStream, dummyString, ',');
+            } else
+                std::getline(lineStream, dummyString, ',');
+
+            if(lineStream.peek() == '\"') {
+                lineStream >> std::quoted(dummyString);
+                while(lineStream.peek() != ',') {
+                    lineStream >> std::quoted(dummyString);
+                    dummyString += dummyString;
+                }
+                std::getline(lineStream, dummyString, ',');
+            } else
+                std::getline(lineStream, dummyString, ',');
+
+            if(lineStream.peek() == '\"') {
+                lineStream >> std::quoted(dummyString);
+                while(lineStream.peek() != ',') {
+                    lineStream >> std::quoted(dummyString);
+                    dummyString += dummyString;
+                }
+                std::getline(lineStream, dummyString, ',');
+            } else
+                std::getline(lineStream, dummyString, ',');
+
+            if(lineStream.peek() == '\"') {
+                lineStream >> std::quoted(dummyString);
+                while(lineStream.peek() != ',') {
+                    lineStream >> std::quoted(dummyString);
+                    dummyString += dummyString;
+                }
+                std::getline(lineStream, dummyString, ',');
+            } else
+                std::getline(lineStream, dummyString, ',');
+            //dummy strings end:
+
+
+            if(lineStream.peek() == '\"') {
+                lineStream >> std::quoted(durationString);
+                while(lineStream.peek() != ',') {
+                    lineStream >> std::quoted(dummyString);
+                    durationString += dummyString;
+                }
+                std::getline(lineStream, dummyString, ',');
+            } else
+                std::getline(lineStream, durationString, ',');
 
             //create new song and possibly new album object
             if(trackNum != stoi(trackNumString)) {
