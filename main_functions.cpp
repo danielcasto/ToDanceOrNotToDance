@@ -151,7 +151,7 @@ void loadAlbums(vector<Album> &albums) {
                 std::getline(lineStream, danceabilityString, ',');
 
 
-            //dummy strings begin:
+            //dummy string section begins -------------------------:
             if(lineStream.peek() == '\"') {
                 lineStream >> std::quoted(dummyString);
                 while(lineStream.peek() != ',') {
@@ -251,7 +251,7 @@ void loadAlbums(vector<Album> &albums) {
                 std::getline(lineStream, dummyString, ',');
             } else
                 std::getline(lineStream, dummyString, ',');
-            //dummy strings end:
+            //dummy strings section end -------------------------
 
 
             if(lineStream.peek() == '\"') {
