@@ -11,6 +11,7 @@ Album::Album(string _name, string _artist, vector<Song> _songs, float _avgDancea
     avgDanceability = _avgDanceability;
     containsExplicitSong = _containsExplicitSong;
     artistID = _artistID;
+    totalRuntime = _totalRuntime;
 }
 
 bool Album::operator>(const Album& rhs) const {

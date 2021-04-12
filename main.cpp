@@ -5,6 +5,10 @@
 using namespace std;
 
 int main() {
+    vector<Album> albums;
+
+    loadAlbums(albums);
+
     cout << "Welcome to Dance for Not to Dance! " << endl;
     cout << "-----------------------------------" << endl;
     cout << "How would you like the albums ranked on Danceability: " << endl;\
