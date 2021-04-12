@@ -312,13 +312,13 @@ void loadAlbums(vector<Album> &albums) {
     fileStream.close();
 }
 
-void heapify_down(vector<Album>& list, int size, int root) {
+void heapify_down(vector<Album>& list, int size, int index) {
 
     //https://www.geeksforgeeks.org/heap-sort/
 
-    int largest = root;
-    int left = 2 * root + 1; // left
-    int right = 2 * root + 2; // right
+    int largest = index;
+    int left = 2 * index + 1; // left
+    int right = 2 * index + 2; // right
 
     //left check
     if (left < size && list[left] > list[largest])
@@ -329,15 +329,38 @@ void heapify_down(vector<Album>& list, int size, int root) {
         largest = right;
 
     // If largest is not root
-    if (largest != root) {
-        swap(list[root], list[largest]);
+    if (largest != index) {
+        swap(list[index], list[largest]);
 
         // Recurse
         heapify_down(list, size, largest);
     }
 }
 
-void heapSort(vector<Album> list, int size) {
+void heapify_minHeap(vector<Album>& list, int size, int index) {
+
+    int smallest = index;
+    int left = 2 * index + 1; // left
+    int right = 2 * index + 2; // right
+
+    //left check
+    if (left < size && list[left] < list[smallest])
+        smallest = left;
+
+    // right check
+    if (right < size && list[right] < list[smallest])
+        smallest = right;
+
+    // If largest is not root
+    if (smallest != index) {
+        swap(list[index], list[smallest]);
+
+        // Recurse
+        heapify_minHeap(list, size, smallest);
+    }
+}
+
+void heapSortMax(vector<Album> list, int size) {
     // Build max heap
     for (int i = size / 2 - 1; i >= 0; i--)
         heapify_down(list, size, i);
@@ -348,5 +371,19 @@ void heapSort(vector<Album> list, int size) {
 
         // Heapify root element to get highest element at root again
         heapify_down(list, i, 0);
+    }
+}
+
+void heapSortMin(vector<Album> list, int size) {
+    // Build max heap
+    for (int i = size / 2 - 1; i >= 0; i--)
+        heapify_minHeap(list, size, i);
+
+    // Heap sort
+    for (int i = size - 1; i >= 0; i--) {
+        swap(list[0], list[i]);
+
+        // Heapify root element to get highest element at root again
+        heapify_minHeap(list, i, 0);
     }
 }
