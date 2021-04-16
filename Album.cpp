@@ -14,6 +14,35 @@ Album::Album(string _name, string _artist, vector<Song> _songs, float _avgDancea
     totalRuntime = _totalRuntime;
 }
 
+string Album::getName() const {
+    return name;
+}
+
+string Album::getArtist() const {
+    return artist;
+}
+
+const vector<Song>& Album::getSongs() const {
+    return songs;
+}
+
+float Album::getAvgDanceability() const {
+    return avgDanceability;
+}
+
+bool Album::hasExplicitSong() const {
+    return containsExplicitSong;
+}
+
+string Album::getArtistID() const {
+    return artistID;
+}
+
+int Album::getTotalRuntime() const {
+    return totalRuntime;
+}
+
+
 bool Album::operator>(const Album& rhs) const {
     return this->avgDanceability > rhs.avgDanceability;
 }

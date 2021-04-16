@@ -5,8 +5,8 @@
 using namespace std;
 
 int main() {
-    vector<Album> albums;
-    vector<Album> copy;
+    vector<Album> allAlbums;
+    vector<Album> selectedAlbums;
     int input = -1;
     bool leastToGreatest;
     bool canContainExplicit;
@@ -21,7 +21,7 @@ int main() {
 
     cout << "Loading..." << endl << endl;
 
-    loadAlbums(albums);
+    loadAlbums(allAlbums);
 
     //TODO write try and catch blocks to catch invalid input
 
@@ -91,6 +91,7 @@ int main() {
         cout << "Enter name of artist: " << endl;
         cin.ignore();
         std::getline(cin, artist);
+        artist = "['" + artist + "']";
     }
 
 
@@ -102,6 +103,28 @@ int main() {
     cout << endl;
     cout << "How many album results would you like to see? ( -1 for all results) " << endl;
     cin >> maxNumOfResults;
+
+    for(const auto& album : allAlbums) {
+        bool meetsCriteria = true;
+
+        if(!canContainExplicit) {
+            if(album.hasExplicitSong())
+                meetsCriteria = false;
+        }
+
+        if(particularArtist) {
+            if(album.getArtist() != artist)
+                meetsCriteria = false;
+        }
+
+        if(maxNumOfTracks != -1) {
+            if (album.getSongs().size() > maxNumOfTracks)
+                meetsCriteria = false;
+        }
+
+        if(meetsCriteria)
+            selectedAlbums.push_back(album);
+    }
 
     return 0;
 }
