@@ -313,50 +313,50 @@ void loadAlbums(vector<Album> &albums) {
 }
 
 void heapify_down(vector<Album>& list, int size, int index) {
+    //heapifyDown for max heap
 
-    //https://www.geeksforgeeks.org/heap-sort/
+    //Citation: this is a variation of Daniel Casto's solution to stepik quiz 6
+    if(index < size) {
+        int largestChildIndex = 0;
+        bool childInRange = true;
 
-    int largest = index;
-    int left = 2 * index + 1; // left
-    int right = 2 * index + 2; // right
+        if(2*index+2 < size && 2*index+1 < size) {
+            largestChildIndex = 2*index+2;
+            if(list[largestChildIndex] < list[2*index+1])
+                largestChildIndex = 2*index+1;
+        } else if(2*index+1 < size)
+            largestChildIndex = 2*index+1;
+        else
+            childInRange = false;
 
-    //left check
-    if (left < size && list[left].getAvgDanceability() > list[largest].getAvgDanceability())
-        largest = left;
-
-    // right check
-    if (right < size && list[right].getAvgDanceability() > list[largest].getAvgDanceability())
-        largest = right;
-
-    // If largest is not root
-    if (largest != index) {
-        swap(list[index], list[largest]);
-
-        // Recurse
-        heapify_down(list, size, largest);
+        if(list[index] < list[largestChildIndex] && childInRange) {
+            swap(list[index], list[largestChildIndex]);
+            heapify_down(list, size, largestChildIndex);
+        }
     }
 }
 
 void heapify_minHeap(vector<Album>& list, int size, int index) {
+    //heapifyDown for min heap
 
-    int smallest = index;
-    int left = 2 * index + 1; // left
-    int right = 2 * index + 2; // right
+    //Citation: this is a variation of Daniel Casto's solution to stepik quiz 6
+    if(index < size) {
+        int smallestChildIndex = 0;
+        bool childInRange = true;
 
-    //left check
-    if (left < size && list[left].getAvgDanceability() < list[smallest].getAvgDanceability())
-        smallest = left;
+        if(2*index+2 < size && 2*index+1 < size) {
+            smallestChildIndex = 2*index+2;
+            if(list[smallestChildIndex] > list[2*index+1])
+                smallestChildIndex = 2*index+1;
+        } else if(2*index+1 < size)
+            smallestChildIndex = 2*index+1;
+        else
+            childInRange = false;
 
-    // right check
-    if (right < size && list[right].getAvgDanceability() < list[smallest].getAvgDanceability())
-        smallest = right;
-
-    // If largest is not root
-    if (smallest != index) {
-        swap(list[index], list[smallest]);
-
-        // Recurse
-        heapify_minHeap(list, size, smallest);
+        if(list[index] > list[smallestChildIndex] && childInRange) {
+            swap(list[index], list[smallestChildIndex]);
+            heapify_minHeap(list, size, smallestChildIndex);
+        }
     }
 }
 
