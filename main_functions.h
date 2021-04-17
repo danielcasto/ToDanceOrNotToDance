@@ -7,4 +7,7 @@ using std::vector;
 
 void loadAlbums(vector<Album> &albums);
 
-void heapify_down(vector<int>& arr, int size, int root);
+void heapify_down(vector<Album>& list, int size, int root);
+void heapify_minHeap(vector<Album>& list, int size, int index);
+void heapSortMax(vector<Album>& list, int size);
+void heapSortMin(vector<Album>& list, int size);

@@ -321,11 +321,11 @@ void heapify_down(vector<Album>& list, int size, int index) {
     int right = 2 * index + 2; // right
 
     //left check
-    if (left < size && list[left] > list[largest])
+    if (left < size && list[left].getAvgDanceability() > list[largest].getAvgDanceability())
         largest = left;
 
     // right check
-    if (right < size && list[right] > list[largest])
+    if (right < size && list[right].getAvgDanceability() > list[largest].getAvgDanceability())
         largest = right;
 
     // If largest is not root
@@ -344,11 +344,11 @@ void heapify_minHeap(vector<Album>& list, int size, int index) {
     int right = 2 * index + 2; // right
 
     //left check
-    if (left < size && list[left] < list[smallest])
+    if (left < size && list[left].getAvgDanceability() < list[smallest].getAvgDanceability())
         smallest = left;
 
     // right check
-    if (right < size && list[right] < list[smallest])
+    if (right < size && list[right].getAvgDanceability() < list[smallest].getAvgDanceability())
         smallest = right;
 
     // If largest is not root
@@ -360,8 +360,8 @@ void heapify_minHeap(vector<Album>& list, int size, int index) {
     }
 }
 
-void heapSortMax(vector<Album> list, int size) {
-    // Build max heap
+void heapSortMin(vector<Album>& list, int size) {
+    // Build min heap
     for (int i = size / 2 - 1; i >= 0; i--)
         heapify_down(list, size, i);
 
@@ -374,7 +374,7 @@ void heapSortMax(vector<Album> list, int size) {
     }
 }
 
-void heapSortMin(vector<Album> list, int size) {
+void heapSortMax(vector<Album>& list, int size) {
     // Build max heap
     for (int i = size / 2 - 1; i >= 0; i--)
         heapify_minHeap(list, size, i);
@@ -388,37 +388,37 @@ void heapSortMin(vector<Album> list, int size) {
     }
 }
 
-int partition(vector<Album>& list, int low, int high) {
-	//Define pivot to first element
-	int pivot = list[low]->avgDanceability;
-	int up = low, down = high;
-
-	//move element smaller than pivot before it, and lager elment after it
-	while (up < down) {
-		for (int i = up; i < high; i++) {
-			if (list[up]->avgDanceability > pivot)
-				break;
-			up++;
-		}
-		for (int j = high; j > low; j--) {
-			if (list[down]->avgDanceability < pivot)
-				break;
-			down--;
-		}
-		if (up < down)
-			swap(&list[up], &list[down]);
-	}
-	swap(&list[low], &list[down]);
-	return down;
-}
-
-void quickSort(vector<Album>& list, int low, int high) {
-	if (low < high) {
-		//define new pivot for new part
-		int pivot = partition(list, low, high);
-		//sort part befor pivot
-		quickSort(list, low, pivot - 1);
-		//sort part after pivot
-		quickSort(list, pivot + 1, high);
-	}
-}
+//int partition(vector<Album>& list, int low, int high) {
+//	//Define pivot to first element
+//	int pivot = list[low]->avgDanceability;
+//	int up = low, down = high;
+//
+//	//move element smaller than pivot before it, and lager element after it
+//	while (up < down) {
+//		for (int i = up; i < high; i++) {
+//			if (list[up]->avgDanceability > pivot)
+//				break;
+//			up++;
+//		}
+//		for (int j = high; j > low; j--) {
+//			if (list[down]->avgDanceability < pivot)
+//				break;
+//			down--;
+//		}
+//		if (up < down)
+//			swap(&list[up], &list[down]);
+//	}
+//	swap(&list[low], &list[down]);
+//	return down;
+//}
+//
+//void quickSort(vector<Album>& list, int low, int high) {
+//	if (low < high) {
+//		//define new pivot for new part
+//		int pivot = partition(list, low, high);
+//		//sort part befor pivot
+//		quickSort(list, low, pivot - 1);
+//		//sort part after pivot
+//		quickSort(list, pivot + 1, high);
+//	}
+//}

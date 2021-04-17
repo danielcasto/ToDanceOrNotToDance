@@ -1,8 +1,11 @@
 #include <iostream>
 #include "Album.h"
 #include "main_functions.h"
+#include <chrono>
+#include <bits/stdc++.h>
 
 using namespace std;
+using namespace std::chrono;
 
 int main() {
     vector<Album> allAlbums;
@@ -14,6 +17,7 @@ int main() {
     string artist;
     int maxNumOfTracks;
     int maxNumOfResults;
+    clock_t start, end;
 
     cout << endl;
     cout << "Welcome to, to Dance or Not to Dance! " << endl;
@@ -36,9 +40,17 @@ int main() {
         if (input == 0)
             return 0;
         else if (input == 1)
-            leastToGreatest = true;
+        {
+        leastToGreatest = true;
+        start = clock();
+        heapSortMin(allAlbums, allAlbums.size());
+        end = clock();
+        }
         else if (input == 2)
+        {
             leastToGreatest = false;
+            heapSortMax(allAlbums, allAlbums.size());
+        }
         else
             cout << "Invalid number!!!" << endl << endl;
     }
@@ -112,6 +124,11 @@ int main() {
                 meetsCriteria = false;
         }
 
+        if(canContainExplicit) {
+            if(!album.hasExplicitSong())
+                meetsCriteria = false;
+        }
+
         if(particularArtist) {
             if(album.getArtist() != artist)
                 meetsCriteria = false;
@@ -125,6 +142,45 @@ int main() {
         if(meetsCriteria)
             selectedAlbums.push_back(album);
     }
+
+    int counter = 1;
+    string type;
+
+    cout << "------------------------------------------------" << endl;
+    cout << "|                ALgo Comparison               |" << endl;
+    cout << "------------------------------------------------" << endl;
+
+    double time_taken = double(end) / double(CLOCKS_PER_SEC);
+    cout << "Time taken for Heapsort was : " << fixed
+         << time_taken << setprecision(3);
+    cout << " sec " << endl;
+
+    cout << "------------------------------------------------" << endl;
+
+    cout << "------------------------------------------------" << endl;
+    cout << "|             Album Recommendations            |" << endl;
+    cout << "------------------------------------------------" << endl;
+
+    for (int i = 0; i < maxNumOfResults; i++) {
+
+        if (selectedAlbums[i].hasExplicitSong() == 1){
+            type = "Yes";
+        } else {
+            type = "No";
+        }
+
+        cout << counter << ") " << endl;
+        cout << "Album Name: " << selectedAlbums[i].getName() << endl;
+        cout << "Explicit: " << type << endl;
+        cout << "# Songs: " << selectedAlbums[i].getSongs().size() << endl;
+        cout << "Danceibility Rating: " << selectedAlbums[i].getAvgDanceability() << endl;
+
+        cout << "\n";
+        counter++;
+    }
+    cout << "------------------------------------------------" << endl;
+    cout << "|       Finished Generating Albums, Enjoy!      |" << endl;
+    cout << "------------------------------------------------" << endl;
 
     return 0;
 }
