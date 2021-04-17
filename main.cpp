@@ -18,11 +18,12 @@ int main() {
     string artist;
     int maxNumOfTracks;
     int maxNumOfResults;
-    clock_t start, end;
+    clock_t start, end, qsStart, qsEnd;
 
     cout << endl;
-    cout << "Welcome to, to Dance or Not to Dance! " << endl;
-    cout << "-----------------------------------" << endl << endl;
+    cout << "------------------------------------------------" << endl;
+    cout << "|     Welcome to, TO DANCE OR NOT TO DANCE     |" << endl;
+    cout << "------------------------------------------------" << endl;
 
     cout << "Loading..." << endl << endl;
 
@@ -35,7 +36,7 @@ int main() {
         cout << "0. Exit " << endl;
         cout << "1. Least -> Most " << endl;
         cout << "2. Most -> Least " << endl;
-        cout << "3. Qucik Sort" << endl;
+//        cout << "3. Qucik Sort" << endl;
 
         cin >> input;
 
@@ -47,18 +48,15 @@ int main() {
         start = clock();
         heapSortMin(allAlbums, allAlbums.size());
         end = clock();
+
+        qsStart = clock();
+        quickSort(allAlbums, low, allAlbums.size() - 1);
+        qsEnd = clock();
         }
         else if (input == 2)
         {
             leastToGreatest = false;
             heapSortMax(allAlbums, allAlbums.size());
-        }
-        else if (input == 3)
-        {
-            leastToGreatest = true;
-            start = clock();
-            quickSort(allAlbums, low, allAlbums.size() - 1);
-            end = clock();
         }
         else
             cout << "Invalid number!!!" << endl << endl;
@@ -159,9 +157,14 @@ int main() {
     cout << "|                ALgo Comparison               |" << endl;
     cout << "------------------------------------------------" << endl;
 
-    double time_taken = double(end) / double(CLOCKS_PER_SEC);
+    double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
     cout << "Time taken for Heapsort was : " << fixed
          << time_taken << setprecision(3);
+    cout << " sec " << endl;
+
+    double time_takenQS = double(qsEnd - qsStart) / double(CLOCKS_PER_SEC);
+    cout << "Time taken for QuickSort was : " << fixed
+         << time_takenQS << setprecision(3);
     cout << " sec " << endl;
 
     cout << "------------------------------------------------" << endl;
@@ -170,20 +173,31 @@ int main() {
     cout << "|             Album Recommendations            |" << endl;
     cout << "------------------------------------------------" << endl;
 
-    for (int i = 0; i < maxNumOfResults; i++) {
+    if (maxNumOfResults = -1){
+        maxNumOfResults = selectedAlbums.size();
+    }
 
+    for (int i = 0; i < maxNumOfResults; i++) {
         if (selectedAlbums[i].hasExplicitSong() == 1){
             type = "Yes";
         } else {
             type = "No";
         }
 
-        cout << counter << ") " << endl;
-        cout << "Album Name: " << selectedAlbums[i].getName() << endl;
-        cout << "Explicit: " << type << endl;
-        cout << "# Songs: " << selectedAlbums[i].getSongs().size() << endl;
-        cout << "Danceibility Rating: " << selectedAlbums[i].getAvgDanceability() << endl;
-
+        if (particularArtist) {
+            cout << counter << ") " << endl;
+            cout << "Album Name: " << selectedAlbums[i].getName() << endl;
+            cout << "Album Artist: " << selectedAlbums[i].getArtist() << endl;
+            cout << "Explicit: " << type << endl;
+            cout << "# Songs: " << selectedAlbums[i].getSongs().size() << endl;
+            cout << "Danceibility Rating: " << selectedAlbums[i].getAvgDanceability() << endl;
+        } else {
+            cout << counter << ") " << endl;
+            cout << "Album Name: " << selectedAlbums[i].getName() << endl;
+            cout << "Explicit: " << type << endl;
+            cout << "# Songs: " << selectedAlbums[i].getSongs().size() << endl;
+            cout << "Danceibility Rating: " << selectedAlbums[i].getAvgDanceability() << endl;
+        };
         cout << "\n";
         counter++;
     }
