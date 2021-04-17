@@ -35,6 +35,7 @@ int main() {
         cout << "0. Exit " << endl;
         cout << "1. Least -> Most " << endl;
         cout << "2. Most -> Least " << endl;
+        cout << "3. Qucik Sort" << endl;
 
         cin >> input;
 
