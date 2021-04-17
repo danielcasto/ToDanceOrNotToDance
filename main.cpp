@@ -11,6 +11,7 @@ int main() {
     vector<Album> allAlbums;
     vector<Album> selectedAlbums;
     int input = -1;
+    int low=0;
     bool leastToGreatest;
     bool canContainExplicit;
     bool particularArtist;
@@ -29,7 +30,7 @@ int main() {
 
     //TODO write try and catch blocks to catch invalid input
 
-    while(input < 0 || input > 2) {
+    while(input < 0 || input > 3) {
         cout << "How would you like the albums ranked on Danceability: " << endl;\
         cout << "0. Exit " << endl;
         cout << "1. Least -> Most " << endl;
@@ -50,6 +51,13 @@ int main() {
         {
             leastToGreatest = false;
             heapSortMax(allAlbums, allAlbums.size());
+        }
+        else if (input == 3)
+        {
+            leastToGreatest = true;
+            start = clock();
+            quickSort(allAlbums, low, allAlbums.size() - 1);
+            end = clock();
         }
         else
             cout << "Invalid number!!!" << endl << endl;
