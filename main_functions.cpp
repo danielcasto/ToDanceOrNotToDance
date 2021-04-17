@@ -387,3 +387,38 @@ void heapSortMin(vector<Album> list, int size) {
         heapify_minHeap(list, i, 0);
     }
 }
+
+int partition(vector<Album>& list, int low, int high) {
+	//Define pivot to first element
+	int pivot = list[low];
+	int up = low, down = high;
+
+	//move element smaller than pivot before it, and lager elment after it
+	while (up < down) {
+		for (int i = up; i < high; i++) {
+			if (list[up] > pivot)
+				break;
+			up++;
+		}
+		for (int j = high; j > low; j--) {
+			if (list[down] < pivot)
+				break;
+			down--;
+		}
+		if (up < down)
+			swap(&list[up], &list[down]);
+	}
+	swap(&list[low], &list[down]);
+	return down;
+}
+
+void quickSort(vector<Album>& list, int low, int high) {
+	if (low < high) {
+		//define new pivot for new part
+		int pivot = partition(list, low, high);
+		//sort part befor pivot
+		quickSort(list, low, pivot - 1);
+		//sort part after pivot
+		quickSort(list, pivot + 1, high);
+	}
+}
