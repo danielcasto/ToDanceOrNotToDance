@@ -36,7 +36,6 @@ int main() {
         cout << "0. Exit " << endl;
         cout << "1. Least -> Most " << endl;
         cout << "2. Most -> Least " << endl;
-//        cout << "3. Qucik Sort" << endl;
 
         cin >> input;
 
@@ -44,19 +43,21 @@ int main() {
             return 0;
         else if (input == 1)
         {
-        leastToGreatest = true;
-        start = clock();
-        heapSortMin(allAlbums, allAlbums.size());
-        end = clock();
+            leastToGreatest = true;
+            start = clock();
+            heapSortMin(allAlbums, allAlbums.size());
+            end = clock();
 
-        qsStart = clock();
-        quickSort(allAlbums, low, allAlbums.size() - 1);
-        qsEnd = clock();
+            qsStart = clock();
+            quickSort(allAlbums, low, allAlbums.size() - 1);
+            qsEnd = clock();
         }
         else if (input == 2)
         {
+            start = clock();
             leastToGreatest = false;
             heapSortMax(allAlbums, allAlbums.size());
+            end = clock();
         }
         else
             cout << "Invalid number!!!" << endl << endl;
@@ -162,10 +163,12 @@ int main() {
          << time_taken << setprecision(3);
     cout << " sec " << endl;
 
-    double time_takenQS = double(qsEnd - qsStart) / double(CLOCKS_PER_SEC);
-    cout << "Time taken for QuickSort was : " << fixed
-         << time_takenQS << setprecision(3);
-    cout << " sec " << endl;
+    if(leastToGreatest) {
+        double time_takenQS = double(qsEnd - qsStart) / double(CLOCKS_PER_SEC);
+        cout << "Time taken for QuickSort was : " << fixed
+             << time_takenQS << setprecision(3);
+        cout << " sec " << endl;
+    }
 
     cout << "------------------------------------------------" << endl;
 
@@ -173,7 +176,7 @@ int main() {
     cout << "|             Album Recommendations            |" << endl;
     cout << "------------------------------------------------" << endl;
 
-    if (maxNumOfResults = -1){
+    if (maxNumOfResults == -1){
         maxNumOfResults = selectedAlbums.size();
     }
 
