@@ -390,18 +390,18 @@ void heapSortMin(vector<Album> list, int size) {
 
 int partition(vector<Album>& list, int low, int high) {
 	//Define pivot to first element
-	int pivot = list[low];
+	int pivot = list[low]->avgDanceability;
 	int up = low, down = high;
 
 	//move element smaller than pivot before it, and lager elment after it
 	while (up < down) {
 		for (int i = up; i < high; i++) {
-			if (list[up] > pivot)
+			if (list[up]->avgDanceability > pivot)
 				break;
 			up++;
 		}
 		for (int j = high; j > low; j--) {
-			if (list[down] < pivot)
+			if (list[down]->avgDanceability < pivot)
 				break;
 			down--;
 		}
