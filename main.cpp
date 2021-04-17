@@ -67,7 +67,7 @@ int main() {
 
     while(input < 0 || input > 2) {
         cout << endl;
-        cout << "Would you like Albums contain explict songs? " << endl;
+        cout << "Would you like Albums that contain explict songs? " << endl;
         cout << "0. Exit " << endl;
         cout << "1. Yes " << endl;
         cout << "2. No " << endl;
@@ -193,13 +193,13 @@ int main() {
             cout << "Album Artist: " << selectedAlbums[i].getArtist() << endl;
             cout << "Explicit: " << type << endl;
             cout << "# Songs: " << selectedAlbums[i].getSongs().size() << endl;
-            cout << "Danceibility Rating: " << selectedAlbums[i].getAvgDanceability() << endl;
+            cout << "Danceability Rating: " << selectedAlbums[i].getAvgDanceability() << endl;
         } else {
             cout << counter << ") " << endl;
             cout << "Album Name: " << selectedAlbums[i].getName() << endl;
             cout << "Explicit: " << type << endl;
             cout << "# Songs: " << selectedAlbums[i].getSongs().size() << endl;
-            cout << "Danceibility Rating: " << selectedAlbums[i].getAvgDanceability() << endl;
+            cout << "Danceability Rating: " << selectedAlbums[i].getAvgDanceability() << endl;
         };
         cout << "\n";
         counter++;
