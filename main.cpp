@@ -133,11 +133,6 @@ int main() {
                 meetsCriteria = false;
         }
 
-        if(canContainExplicit) {
-            if(!album.hasExplicitSong())
-                meetsCriteria = false;
-        }
-
         if(particularArtist) {
             if(album.getArtist() != artist)
                 meetsCriteria = false;
