@@ -11,14 +11,15 @@ using namespace std::chrono;
 int main() {
     vector<Album> allAlbums;
     vector<Album> selectedAlbums;
+    string stringInput;
     int input = -1;
     int low=0;
     bool leastToGreatest;
     bool canContainExplicit;
     bool particularArtist;
     string artist;
-    int maxNumOfTracks;
-    int maxNumOfResults;
+    int maxNumOfTracks = -2;
+    int maxNumOfResults = -2;
     clock_t start, end, qsStart, qsEnd;
 
     cout << endl;
@@ -30,15 +31,19 @@ int main() {
 
     loadAlbums(allAlbums);
 
-    //TODO write try and catch blocks to catch invalid input
-
-    while(input < 0 || input > 3) {
+    while(input < 0 || input > 2) {
         cout << "How would you like the albums ranked on Danceability: " << endl;\
         cout << "0. Exit " << endl;
         cout << "1. Least -> Most " << endl;
         cout << "2. Most -> Least " << endl;
 
-        cin >> input;
+        cin >> stringInput;
+
+        try {
+            input = stoi(stringInput);
+        } catch (...) {
+            input = -1;
+        }
 
         if (input == 0)
             return 0;
@@ -61,7 +66,7 @@ int main() {
             end = clock();
         }
         else
-            cout << "Invalid number!!!" << endl << endl;
+            cout << "Invalid input!!!" << endl << endl;
     }
 
     input = -1;
@@ -73,7 +78,13 @@ int main() {
         cout << "1. Yes " << endl;
         cout << "2. No " << endl;
 
-        cin >> input;
+        cin >> stringInput;
+
+        try {
+            input = stoi(stringInput);
+        } catch (...) {
+            input = -1;
+        }
 
         if (input == 0)
             return 0;
@@ -82,7 +93,7 @@ int main() {
         else if (input == 2)
             canContainExplicit = false;
         else
-            cout << "Invalid number!!!" << endl << endl;
+            cout << "Invalid input!!!" << endl << endl;
 
     }
 
@@ -95,7 +106,13 @@ int main() {
         cout << "1. Yes " << endl;
         cout << "2. No " << endl;
 
-        cin >> input;
+        cin >> stringInput;
+
+        try {
+            input = stoi(stringInput);
+        } catch (...) {
+            input = -1;
+        }
 
         if (input == 0)
             return 0;
@@ -104,7 +121,7 @@ int main() {
         else if (input == 2)
             particularArtist = false;
         else
-            cout << "Invalid number!!!" << endl << endl;
+            cout << "Invalid input!!!" << endl << endl;
     }
 
     if(particularArtist) {
@@ -116,14 +133,35 @@ int main() {
     }
 
 
-    cout << endl;
-    cout << "MAX number of tracks per Album (-1 for no max): " << endl;
-    cin >> maxNumOfTracks;
+    while(maxNumOfTracks < -1) {
+        cout << endl;
+        cout << "MAX number of tracks per Album (-1 for no max): " << endl;
+        cin >> stringInput;
 
+        try {
+            maxNumOfTracks = stoi(stringInput);
+        } catch (...) {
+            maxNumOfTracks = -2;
+        }
 
-    cout << endl;
-    cout << "How many album results would you like to see? ( -1 for all results) " << endl;
-    cin >> maxNumOfResults;
+        if(maxNumOfTracks < -1)
+            cout << "Invalid input!!!" << endl << endl;
+    }
+
+    while(maxNumOfResults < -1) {
+        cout << endl;
+        cout << "How many album results would you like to see? ( -1 for all results) " << endl;
+        cin >> stringInput;
+
+        try {
+            maxNumOfResults = stoi(stringInput);
+        } catch (...) {
+            maxNumOfResults = -2;
+        }
+
+        if(maxNumOfResults < -1)
+            cout << "Invalid input!!!" << endl << endl;
+    }
 
     for(const auto& album : allAlbums) {
         bool meetsCriteria = true;
