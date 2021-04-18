@@ -181,15 +181,20 @@ int main() {
                 meetsCriteria = false;
         }
 
-        if(meetsCriteria)
+        if(meetsCriteria) {
             selectedAlbums.push_back(album);
+
+            //shortens process so that loop does not unnecessarily iterate through thousands of albums
+            if(selectedAlbums.size() == maxNumOfResults)
+                break;
+        }
     }
 
     int counter = 1;
     string type;
 
     cout << "------------------------------------------------" << endl;
-    cout << "|                ALgo Comparison               |" << endl;
+    cout << "|                Algo Comparison               |" << endl;
     cout << "------------------------------------------------" << endl;
 
     double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
@@ -214,8 +219,8 @@ int main() {
         maxNumOfResults = selectedAlbums.size();
     }
 
-    for (int i = 0; i < maxNumOfResults; i++) {
-        if (selectedAlbums[i].hasExplicitSong() == 1){
+    for (const auto& selectedAlbum : selectedAlbums) {
+        if (selectedAlbum.hasExplicitSong() == 1){
             type = "Yes";
         } else {
             type = "No";
@@ -223,23 +228,23 @@ int main() {
 
         if (particularArtist) {
             cout << counter << ") " << endl;
-            cout << "Album Name: " << selectedAlbums[i].getName() << endl;
-            cout << "Album Artist: " << selectedAlbums[i].getArtist() << endl;
+            cout << "Album Name: " << selectedAlbum.getName() << endl;
+            cout << "Album Artist: " << selectedAlbum.getArtist() << endl;
             cout << "Explicit: " << type << endl;
-            cout << "# Songs: " << selectedAlbums[i].getSongs().size() << endl;
-            cout << "Danceability Rating: " << selectedAlbums[i].getAvgDanceability() << endl;
+            cout << "# Songs: " << selectedAlbum.getSongs().size() << endl;
+            cout << "Danceability Rating: " << selectedAlbum.getAvgDanceability() << endl;
         } else {
             cout << counter << ") " << endl;
-            cout << "Album Name: " << selectedAlbums[i].getName() << endl;
+            cout << "Album Name: " << selectedAlbum.getName() << endl;
             cout << "Explicit: " << type << endl;
-            cout << "# Songs: " << selectedAlbums[i].getSongs().size() << endl;
-            cout << "Danceability Rating: " << selectedAlbums[i].getAvgDanceability() << endl;
+            cout << "# Songs: " << selectedAlbum.getSongs().size() << endl;
+            cout << "Danceability Rating: " << selectedAlbum.getAvgDanceability() << endl;
         };
         cout << "\n";
         counter++;
     }
     cout << "------------------------------------------------" << endl;
-    cout << "|       Finished Generating Albums, Enjoy!      |" << endl;
+    cout << "|       Finished Generating Albums, Enjoy!     |" << endl;
     cout << "------------------------------------------------" << endl;
 
     return 0;
