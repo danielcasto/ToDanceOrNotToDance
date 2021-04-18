@@ -2,7 +2,7 @@
 #include "Album.h"
 #include "main_functions.h"
 #include <chrono>
-#include <bits/stdc++.h>
+//#include <bits/stdc++.h>
 #include <iomanip>
 
 using namespace std;
@@ -130,11 +130,6 @@ int main() {
 
         if(!canContainExplicit) {
             if(album.hasExplicitSong())
-                meetsCriteria = false;
-        }
-
-        if(canContainExplicit) {
-            if(!album.hasExplicitSong())
                 meetsCriteria = false;
         }
 
