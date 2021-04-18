@@ -2,10 +2,10 @@
 #include "Album.h"
 #include "main_functions.h"
 #include <chrono>
-//#include <bits/stdc++.h>
+//#include <bits/stdc++.h> TODO remove this
 #include <iomanip>
 
-using namespace std;
+using namespace std; //TODO remove this?
 using namespace std::chrono;
 
 int main() {
@@ -17,6 +17,7 @@ int main() {
     bool leastToGreatest;
     bool canContainExplicit;
     bool particularArtist;
+    bool listSongs;
     string artist;
     int maxNumOfTracks = -2;
     int maxNumOfResults = -2;
@@ -163,6 +164,33 @@ int main() {
             cout << "Invalid input!!!" << endl << endl;
     }
 
+    input = -1;
+
+    while(input < 1 || input > 2) {
+        cout << endl;
+        cout << "Would you like for the songs of each album to be listed? " << endl;
+        cout << "0. Exit " << endl;
+        cout << "1. Yes " << endl;
+        cout << "2. No " << endl;
+
+        cin >> stringInput;
+
+        try {
+            input = stoi(stringInput);
+        } catch (...) {
+            input = -1;
+        }
+
+        if (input == 0)
+            return 0;
+        else if (input == 1)
+            listSongs = true;
+        else if (input == 2)
+            listSongs = false;
+        else
+            cout << "Invalid input!!!" << endl << endl;
+    }
+
     for(const auto& album : allAlbums) {
         bool meetsCriteria = true;
 
@@ -191,7 +219,7 @@ int main() {
     }
 
     int counter = 1;
-    string type;
+    string albumExplicitStr;
 
     cout << "------------------------------------------------" << endl;
     cout << "|                Algo Comparison               |" << endl;
@@ -215,32 +243,46 @@ int main() {
     cout << "|             Album Recommendations            |" << endl;
     cout << "------------------------------------------------" << endl;
 
-    if (maxNumOfResults == -1){
-        maxNumOfResults = selectedAlbums.size();
-    }
-
     for (const auto& selectedAlbum : selectedAlbums) {
         if (selectedAlbum.hasExplicitSong() == 1){
-            type = "Yes";
+            albumExplicitStr = "Yes";
         } else {
-            type = "No";
+            albumExplicitStr = "No";
         }
 
-        if (particularArtist) {
-            cout << counter << ") " << endl;
-            cout << "Album Name: " << selectedAlbum.getName() << endl;
-            cout << "Album Artist: " << selectedAlbum.getArtist() << endl;
-            cout << "Explicit: " << type << endl;
-            cout << "# Songs: " << selectedAlbum.getSongs().size() << endl;
-            cout << "Danceability Rating: " << selectedAlbum.getAvgDanceability() << endl;
-        } else {
-            cout << counter << ") " << endl;
-            cout << "Album Name: " << selectedAlbum.getName() << endl;
-            cout << "Explicit: " << type << endl;
-            cout << "# Songs: " << selectedAlbum.getSongs().size() << endl;
-            cout << "Danceability Rating: " << selectedAlbum.getAvgDanceability() << endl;
-        };
-        cout << "\n";
+        milliseconds albumInMS(selectedAlbum.getTotalRuntime());
+        minutes albumInMin = duration_cast<minutes>(albumInMS);
+
+        cout << counter << ") " << endl;
+        cout << "Album Name: " << selectedAlbum.getName() << endl;
+        cout << "Album Artist: " << selectedAlbum.getArtist() << endl;
+        cout << "Artist Spotify ID: " << selectedAlbum.getArtistID() << endl;
+        cout << "Explicit: " << albumExplicitStr << endl;
+        cout << "Average Song Danceability Rating: " << selectedAlbum.getAvgDanceability() << endl;
+        cout << "Total runtime approximation: " << albumInMin.count() << " min" << endl;
+        cout << "# of Songs: " << selectedAlbum.getSongs().size() << endl;
+
+        if(listSongs) {
+            string songExplicitStr;
+            const vector<Song>& currentSongs = selectedAlbum.getSongs();
+
+            cout << "Songs: " << endl << endl;
+
+            for(const auto& song : currentSongs) {
+                if (song.getExplicitness() == 1){
+                    songExplicitStr = "Yes";
+                } else {
+                    songExplicitStr = "No";
+                }
+
+                cout << "   Song Name: " << song.getName() << endl;
+                cout << "   Explicit: " << songExplicitStr << endl;
+                cout << "   Danceability: " << song.getDanceability() << endl;
+                cout << "   Song Spotify ID: " << song.getSongID() << endl << endl;
+            }
+        }
+
+        cout << endl;
         counter++;
     }
     cout << "------------------------------------------------" << endl;

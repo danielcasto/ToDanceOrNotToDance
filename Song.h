@@ -21,4 +21,9 @@ class Song {
 
 public:
     Song(string _songID, string _name, int _trackNumber, bool _isExplicit, float _danceability, int _duration);
+    string getName() const;
+    bool getExplicitness() const;
+    float getDanceability() const;
+    int getDuration() const;
+    string getSongID() const;
 };

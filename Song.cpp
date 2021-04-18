@@ -12,3 +12,23 @@ Song::Song(string _songID, string _name, int _trackNumber, bool _isExplicit, flo
     trackNumber = _trackNumber;
     songID = _songID;
 }
+
+string Song::getName() const {
+    return name;
+}
+
+bool Song::getExplicitness() const {
+    return isExplicit;
+}
+
+float Song::getDanceability() const {
+    return danceability;
+}
+
+int Song::getDuration() const {
+    return duration;
+}
+
+string Song::getSongID() const {
+    return songID;
+}
