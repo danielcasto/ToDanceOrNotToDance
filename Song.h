@@ -14,7 +14,6 @@ class Song {
     float danceability;
     //note that duration is measured in milliseconds
     int duration;
-    //trackNumber may not be necessary
     int trackNumber;
     //spotify song ID
     string songID;

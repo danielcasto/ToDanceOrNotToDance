@@ -416,7 +416,7 @@ void quickSort(vector<Album>& list, int low, int high) {
 	if (low < high) {
 		//define new pivot for new part
 		int pivot = partition(list, low, high);
-		//sort part befor pivot
+		//sort part before pivot
 		quickSort(list, low, pivot - 1);
 		//sort part after pivot
 		quickSort(list, pivot + 1, high);
