@@ -2,7 +2,7 @@
 #include "Album.h"
 #include "main_functions.h"
 #include <chrono>
-//#include <bits/stdc++.h> TODO remove the comment
+#include <bits/stdc++.h>
 #include <iomanip>
 
 using std::cout;
